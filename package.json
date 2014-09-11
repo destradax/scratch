@@ -1,0 +1,14 @@
+{
+  "name": "scratch",
+  "main": "./lib/scratch",
+  "version": "0.0.0",
+  "description": "A short description of your package",
+  "activationEvents": ["scratch:toggle"],
+  "repository": "https://github.com/atom/scratch",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+  }
+}
