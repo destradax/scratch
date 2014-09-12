@@ -7,24 +7,11 @@ Scratch = require '../lib/scratch'
 # or `fdescribe`). Remove the `f` to unfocus the block.
 
 describe "Scratch", ->
-  activationPromise = null
+	activationPromise = null
 
-  beforeEach ->
-    atom.workspaceView = new WorkspaceView
-    activationPromise = atom.packages.activatePackage('scratch')
+	beforeEach ->
+		atom.workspaceView = new WorkspaceView
+		activationPromise = atom.packages.activatePackage('scratch')
 
-  describe "when the scratch:toggle event is triggered", ->
-    it "attaches and then detaches the view", ->
-      expect(atom.workspaceView.find('.scratch')).not.toExist()
-
-      # This is an activation event, triggering it will cause the package to be
-      # activated.
-      atom.workspaceView.trigger 'scratch:toggle'
-
-      waitsForPromise ->
-        activationPromise
-
-      runs ->
-        expect(atom.workspaceView.find('.scratch')).toExist()
-        atom.workspaceView.trigger 'scratch:toggle'
-        expect(atom.workspaceView.find('.scratch')).not.toExist()
+	describe "when the scratch:toggle event is triggered", ->
+		it "opens and then closes the scratch", ->
