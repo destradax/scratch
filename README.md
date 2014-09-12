@@ -1,5 +1,13 @@
-# scratch package
+# Scratch
 
-A short description of your package.
+A simple scratchpad implementation for Github's [Atom](http://atom.io)
 
-![A screenshot of your spankin' package](https://f.cloud.github.com/assets/69169/2290250/c35d867a-a017-11e3-86be-cd7c5bf3ff9b.gif)
+## Description
+* Press <code>Ctrl + Alt + ,</code> to open/close the scratch file.
+* The scratch file is saved in *~/.atom/scratch*.
+
+## Installation
+1. Clone the project and put the folder inside your packages folder (Default is *~/.atom/packages*).
+2. Restart Atom
+
+Will provide an atom package in the future
