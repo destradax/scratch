@@ -10,21 +10,22 @@ module.exports =
 		if @isScratchOpen()
 			@closeScratch()
 		else
-			atom.workspace.open(@dirPath + "/" + @fileName)
+			@openScratch()
+
+	getScratchEditor: ->
+		editors = atom.workspace.getEditors()
+		for editor in editors
+			return editor if editor.getTitle() is @fileName
 
 	isScratchOpen: ->
-		editors = atom.workspace.getEditors()
-		for editor in editors
-			return true if editor.getTitle() is @fileName
-		return false
+		scratchEditor = @getScratchEditor()
+		scratchEditor isnt undefined
+
+	openScratch: ->
+		atom.workspace.open(@dirPath + "/" + @fileName)
 
 	closeScratch: ->
-		editors = atom.workspace.getEditors()
-		scratch = null
-		for editor in editors
-			do (editor) ->
-				if editor.getTitle() is @fileName
-					scratch = editor
-		if scratch && scratch.shouldPromptToSave
-			atom.workspace.getActivePane().promptToSaveItem(scratch)
-		editor.destroy()
+		scratchEditor = @getScratchEditor()
+		if scratchEditor.shouldPromptToSave
+			atom.workspace.getActivePane().promptToSaveItem(scratchEditor)
+		scratchEditor.destroy()
