@@ -1,13 +1,9 @@
 # See https://atom.io/docs/latest/creating-a-package#menus for more details
-'context-menu':
-  '.overlayer':
-      'Enable scratch': 'scratch:toggle'
-
 'menu': [
   {
     'label': 'Packages'
     'submenu': [
-      'label': 'scratch'
+      'label': 'Scratch'
       'submenu': [
         { 'label': 'Toggle', 'command': 'scratch:toggle' }
       ]
