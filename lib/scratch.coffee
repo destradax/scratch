@@ -4,7 +4,7 @@ module.exports =
 	fileName: "scratch"
 
 	activate: (state) ->
-		atom.workspaceView.command "scratch:toggle", => @toggleScratch()
+		atom.commands.add "atom-workspace", "scratch:toggle", => @toggleScratch()
 
 	toggleScratch: ->
 		if @isScratchOpen()
@@ -13,13 +13,13 @@ module.exports =
 			@openScratch()
 
 	getScratchEditor: ->
-		editors = atom.workspace.getEditors()
+		editors = atom.workspace.getTextEditors()
 		for editor in editors
 			return editor if editor.getTitle() is @fileName
 
 	isScratchOpen: ->
 		scratchEditor = @getScratchEditor()
-		scratchEditor isnt undefined
+		return scratchEditor?
 
 	openScratch: ->
 		atom.workspace.open(@dirPath + "/" + @fileName)
