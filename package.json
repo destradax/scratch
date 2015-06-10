@@ -1,29 +1,28 @@
 {
-  "name": "scratch",
-  "main": "./lib/scratch",
-  "version": "0.3.0",
-  "description": "A simple scratchpad implementation for Github's Atom",
-  "activationCommands": {
-    "atom-workspace": ["scratch:toggle"]
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/destradax/scratch"
-  },
-  "license": "MIT",
-  "engines": {
-    "atom": ">=0.174.0 <2.0.0"
-  },
-  "dependencies": {},
-  "readme": "# Scratch\n\nA simple scratchpad implementation for Github's [Atom](http://atom.io)\n\n## Description\n* Press <code>Ctrl + Alt + ,</code> to open/close the scratch file.\n* The scratch file is saved in *~/.atom/scratch*.\n",
-  "readmeFilename": "README.md",
-  "bugs": {
-    "url": "https://github.com/destradax/scratch/issues"
-  },
-  "homepage": "https://github.com/destradax/scratch",
-  "_id": "scratch@0.3.0",
-  "dist": {
-    "shasum": "e4144ff1dad17845366f45bdee289aa85868c716"
-  }
+	"name": "scratch",
+	"main": "./lib/scratch",
+	"version": "0.3.0",
+	"description": "A simple scratchpad implementation for Github's Atom",
+	"activationCommands": {
+		"atom-workspace": ["scratch:toggle"]
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/destradax/scratch"
+	},
+	"license": "MIT",
+	"engines": {
+		"atom": ">=0.174.0 <2.0.0"
+	},
+	"dependencies": {},
+	"readme": "# Scratch\n\nA simple scratchpad implementation for Github's [Atom](http://atom.io)\n\n## Description\n* Press <code>Ctrl + Alt + ,</code> to open/close the scratch file.\n* The scratch file is saved in *~/.atom/scratch*.\n",
+	"readmeFilename": "README.md",
+	"bugs": {
+		"url": "https://github.com/destradax/scratch/issues"
+	},
+	"homepage": "https://github.com/destradax/scratch",
+	"_id": "scratch@0.3.0",
+	"dist": {
+		"shasum": "e4144ff1dad17845366f45bdee289aa85868c716"
+	}
 }
-

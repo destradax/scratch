@@ -1,12 +1,12 @@
 # See https://atom.io/docs/latest/creating-a-package#menus for more details
 'menu': [
-  {
-    'label': 'Packages'
-    'submenu': [
-      'label': 'Scratch'
-      'submenu': [
-        { 'label': 'Toggle', 'command': 'scratch:toggle' }
-      ]
-    ]
-  }
+	{
+		'label': 'Packages'
+		'submenu': [
+			'label': 'Scratch'
+			'submenu': [
+				{ 'label': 'Toggle', 'command': 'scratch:toggle' }
+			]
+		]
+	}
 ]
