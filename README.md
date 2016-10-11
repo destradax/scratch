@@ -1,4 +1,5 @@
 # Scratch
+[![Build Status](https://travis-ci.org/destradax/scratch.svg?branch=master)](https://travis-ci.org/destradax/scratch)
 
 A simple scratchpad implementation for Github's [Atom](http://atom.io)
 
