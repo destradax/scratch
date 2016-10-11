@@ -26,5 +26,8 @@
   "_id": "scratch@0.3.0",
   "dist": {
     "shasum": "e4144ff1dad17845366f45bdee289aa85868c716"
-  }
+  },
+	"scripts": {
+		"test": "atom --test --timeout 60 ./spec/scratch-spec.js"
+	}
 }
