@@ -1,0 +1,18 @@
+{
+	"menu": [
+		{
+			"label": "Packages",
+			"submenu": [
+				{
+					"label": "Scratch",
+					"submenu": [
+						{
+							"label": "Toggle",
+							"command": "scratch:toggle"
+						}
+					]
+				}
+			]
+		}
+	]
+}
