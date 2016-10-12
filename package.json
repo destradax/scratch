@@ -1,7 +1,7 @@
 {
   "name": "scratch",
   "main": "./lib/scratch",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A simple scratchpad implementation for Github's Atom",
   "activationCommands": {
     "atom-workspace": [
