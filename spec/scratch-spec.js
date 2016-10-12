@@ -42,6 +42,9 @@ describe("Scratch", () => {
 		describe("and the scratch editor is not open", () => {
 
 			beforeEach(() => {
+				while (Scratch.getScratchEditor()) {
+					Scratch.closeScratchEditor();
+				}
 				expect(Scratch.getScratchEditor()).toBeUndefined();
 			});
 
@@ -54,14 +57,13 @@ describe("Scratch", () => {
 					let scratchEditor = Scratch.getScratchEditor();
 					expect(scratchEditor).not.toBeUndefined();
 
-					let editorElement = atom.views.getView(scratchEditor);
 					expect(atom.workspace.isTextEditor(scratchEditor)).toBe(true);
 				});
 			});
 		});
 
 		describe("and the scratch editor is open", () => {
-			
+
 			beforeEach(() => {
 				if (!Scratch.getScratchEditor()) {
 					waitsForPromise(() => {
