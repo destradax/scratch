@@ -9,28 +9,43 @@ import Scratch from "../lib/scratch";
 
 describe("Scratch", () => {
 
-	describe("when the scratch:toggle event is triggered", () => {
+	beforeEach(() => {
 		let workspaceElement;
 
-		beforeEach(() => {
-			workspaceElement = atom.views.getView(atom.workspace);
+		let activationPromise = atom.packages.activatePackage('scratch');
+		workspaceElement = atom.views.getView(atom.workspace);
+		atom.commands.dispatch(workspaceElement, 'scratch:toggle');
+
+		waitsForPromise(() => {
+			return activationPromise;
 		});
+
+		runs(() => {
+			expect(atom.packages.isPackageActive("scratch")).toBe(true);
+		});
+	});
+
+	describe("when the scratch package is loaded for the first time", () => {
+
+		it("should have the default filename and path", () => {
+			expect(atom.config.get("scratch.filename")).toBe("scratch");
+			expect(atom.config.get("scratch.path")).toBe(atom.getConfigDirPath());
+
+			let defaultUri = `${atom.getConfigDirPath()}/scratch`;
+
+			expect(Scratch.getScratchURI()).toBe(defaultUri);
+		});
+	});
+
+	describe("when the scratch:toggle event is triggered", () => {
 
 		describe("and the scratch editor is not open", () => {
 
 			beforeEach(() => {
 				expect(Scratch.getScratchEditor()).toBeUndefined();
-
-				let activationPromise = atom.packages.activatePackage('scratch');
-				atom.commands.dispatch(workspaceElement, 'scratch:toggle');
-
-				waitsForPromise(() => {
-					return activationPromise;
-				});
 			});
 
 			it("should open the scratch editor", () => {
-
 				waitsForPromise(() => {
 					return Scratch.openScratchEditor();
 				});
@@ -46,6 +61,7 @@ describe("Scratch", () => {
 		});
 
 		describe("and the scratch editor is open", () => {
+			
 			beforeEach(() => {
 				if (!Scratch.getScratchEditor()) {
 					waitsForPromise(() => {
