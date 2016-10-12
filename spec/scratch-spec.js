@@ -8,13 +8,13 @@ import Scratch from "../lib/scratch";
 // or `fdescribe`). Remove the `f` to unfocus the block.
 
 describe("Scratch", () => {
-	let workspaceElement;
-
-	beforeEach(() => {
-		workspaceElement = atom.views.getView(atom.workspace);
-	});
 
 	describe("when the scratch:toggle event is triggered", () => {
+		let workspaceElement;
+
+		beforeEach(() => {
+			workspaceElement = atom.views.getView(atom.workspace);
+		});
 
 		describe("and the scratch editor is not open", () => {
 
@@ -42,6 +42,21 @@ describe("Scratch", () => {
 					let editorElement = atom.views.getView(scratchEditor);
 					expect(atom.workspace.isTextEditor(scratchEditor)).toBe(true);
 				});
+			});
+		});
+
+		describe("and the scratch editor is open", () => {
+			beforeEach(() => {
+				if (!Scratch.getScratchEditor()) {
+					waitsForPromise(() => {
+						return Scratch.openScratchEditor();
+					});
+				}
+			});
+
+			it("should close the scratch editor", () => {
+				Scratch.closeScratchEditor();
+				expect(Scratch.getScratchEditor()).toBeUndefined();
 			});
 		});
 
