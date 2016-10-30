@@ -30,6 +30,7 @@ describe("Scratch", () => {
 		it("should have the default filename and path", () => {
 			expect(atom.config.get("scratch.filename")).toBe("scratch");
 			expect(atom.config.get("scratch.path")).toBe(atom.getConfigDirPath());
+			expect(atom.config.get("scratch.autosave")).toBe(false);
 
 			let defaultUri = `${atom.getConfigDirPath()}/scratch`;
 
