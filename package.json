@@ -3,11 +3,6 @@
   "main": "./lib/scratch",
   "version": "1.2.0",
   "description": "A simple scratchpad implementation for Github's Atom",
-  "activationCommands": {
-    "atom-workspace": [
-      "scratch:toggle"
-    ]
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/destradax/scratch"
