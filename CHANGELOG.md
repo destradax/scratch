@@ -1,3 +1,6 @@
+## 1.2.2
+* Fixed an issue when closing the scratch editor with unsaved changes.
+
 ## 1.2.1
 * The path set is now checked before opening scratch.
 
