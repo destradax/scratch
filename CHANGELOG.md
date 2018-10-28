@@ -1,3 +1,6 @@
+## 1.3.0
+* Added a config option to always open the scratch file pinned to the left of the active pane.
+
 ## 1.2.2
 * Fixed an issue when closing the scratch editor with unsaved changes.
 
